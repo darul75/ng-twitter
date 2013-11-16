@@ -196,10 +196,10 @@ ul, ol, dl {
   margin-bottom: 15px
 }
 
-ul li {
+/*ul li {
   list-style: inside;
   padding-left: 20px;
-}
+}*/
 
 ol li {
   list-style: decimal inside;
