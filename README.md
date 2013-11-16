@@ -1,16 +1,7 @@
 ng-twitter [![NPM version](https://badge.fury.io/js/ng-twitter.png)](http://badge.fury.io/js/ng-twitter) [![Build Status](https://travis-ci.org/darul75/ng-twitter.png?branch=master)](https://travis-ci.org/darul75/ng-twitter)
 =====================
 
-<<<<<<< HEAD
 Angular directive tweets display.
-=======
-Angular directive for JSON pretty display output, indent and colorized.
-
-Idea was given by the need to display some configuration JSON format files in a back office.
-
-Inspired by this from stackoverflow
-[pretty json javascript](http://stackoverflow.com/questions/4810841/json-pretty-print-using-javascript)
->>>>>>> 5b15f5daf533923bfe5e6f280fcdad33010e98b3
 
 Demo
 ------------
@@ -45,8 +36,8 @@ to the list above, you should add:
 ```
 
 ```html
-<<<<<<< HEAD
 <script type="text/javascript" src="ng-twitter.min.js"></script>
+```
 
 Then, inject `ngTwitter` in your application module:
 
@@ -54,29 +45,17 @@ Then, inject `ngTwitter` in your application module:
 angular.module('myApp', ['ngTwitter']);
 ```
 
-<<<<<<< HEAD
-and then just add an `div` with `pretty-json` directive name attribute and `json` scope variable attribute.
+and then just add an `div` with `tweets` directive name attribute, `authKey` and 'hashtag' scope variable attribute.
 
 ```html
 <div tweets key="authKey" hashtag="hashtag" button="true" count="15" refresh="60"/>
 ```
 
-`authKey` is your scope authentication key variable.
+`authKey`, 'hashtag' are your scope authentication key variable.
 
 ```javascript
 $scope.authKey = 'bzJZSlN4ZnJUYWhyeXdub2R4MzJBOkFHSmw5MnJIeEFTRkpYVW9BSm8zMEpTQzU2Wm0zNFZxZmFVZFh1TUZWamc=';
 $scope.hashtag = 'football';
-=======
-and then just add an `pre` with `pretty-json` directive name attribute and `jsonObj` scope variable attribute.
-
-```html
-<pre json='jsonObj' pretty-json />
-```
-
-`jsonObj` is your scope json variable.
-
-```javascript
-var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
 ```
 
 ### Attribute
@@ -90,13 +69,8 @@ var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
 Example with all above features:
 
 ```html
-<<<<<<< HEAD
 <div ng-app="myApp" ng-controller="ctrl">
 	<div tweets key="authKey" hashtag="hashtag" button="true" count="5" refresh="10"/>		
-=======
-<div ng-app='myApp' ng-controller='ctrl'>
-  <pre json='jsonObj' pretty-json />
->>>>>>> 5b15f5daf533923bfe5e6f280fcdad33010e98b3
 </div>
 ```
 
