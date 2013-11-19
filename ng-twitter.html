@@ -1,0 +1,68 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="ng-twitter.css">
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>	
+	<script type="text/javascript" src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>	
+	<script type="text/javascript" src="../bower_components/angular-mocks/angular-mocks.js"></script>	
+	<script type="text/javascript" src="ng-twitter.js"></script>
+</head>
+<body>
+
+	<div ng-app="myApp" ng-controller="ctrl">
+		<div tweets key="authKey" hashtag="hashtag" button="true" hash='true' count="15" refresh="60"/>		
+	</div>
+
+	<script type="text/javascript">	
+
+		var app = angular.module('myApp', ['ngTwitter', 'ngMockE2E']);
+		app.run(function($httpBackend) {
+
+			var tweet = {
+					"text": "Aggressive Ponytail #hash",
+					"retweet_count": 22,
+					"entities": {			 
+			        "hashtags": [
+			          {
+			            "text": "hash",
+			            "indices": [
+			              15,
+			              25
+			            ]
+			          }
+			        ],
+			        "user_mentions": [			 			
+			        ]
+			     },
+				"user": {			       
+			        "screen_name": "toto"			       			      
+			    }	      
+			};	
+
+		var tweets = [];
+		for (var i=0;i<15;i++) {
+			var t = {};
+			angular.copy(tweet, t);			
+			t["retweet_count"] = i;
+			t["text"] = 'this is a demo #hashtag'+i;
+			tweets.push(t);
+		}
+
+		  var mockTweets = { "statuses": tweets,		    
+			"search_metadata": {
+			    "max_id": 250126199840518145,
+			    "since_id": 24012619984051000			    
+			}
+		};
+		 
+		  // returns the current list of phones
+		  $httpBackend.whenGET('/search?hashtag=football').respond(mockTweets);
+				  
+		});
+
+		function ctrl($scope, $filter) {			
+			$scope.authKey = 'bzJZSlN4ZnJUYWhyeXdub2R4MzJBOkFHSmw5MnJIeEFTRkpYVW9BSm8zMEpTQzU2Wm0zNFZxZmFVZFh1TUZWamc=';
+			$scope.hashtag = 'football';
+		}
+
+	</script>
+
+</body>
