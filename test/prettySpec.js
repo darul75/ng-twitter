@@ -22,9 +22,9 @@ describe('test valid json', function () {
 	});
 
 	// it('creates an instance with default values', function () {
-	// 	var element = $ngCompile('<pre json="json" pretty-json />')($ngRootScope);		
-	// 	$ngRootScope.$apply();
+	//	var element = $ngCompile('<pre json="json" pretty-json />')($ngRootScope);		
+	//	$ngRootScope.$apply();
 
-	// 	expect(element.find('span').length).toBe(10);		
+	//	expect(element.find('span').length).toBe(10);		
 	// });
 });

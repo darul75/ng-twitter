@@ -69,7 +69,7 @@
 		.directive('tweets', ['$timeout', 'twitter', 'linkify', function(timeout, twitter, linkify) {
 			return {
 				restrict : 'AE',
-				scope: { key:'=', hashtag: '=', refresh:'@', button:'@', hash:'@', count:'@'},			
+				scope: { hashtag: '=', refresh:'@', button:'@', hash:'@', count:'@'},
 				template: 
 					'<div class="panel" ng-show="button">' + 
 						'<button name="start" ng-click="startTimeout()" ng-show="stop">start</button>' + 
@@ -96,31 +96,12 @@
 					var count = scope.count ? scope.count : undefined;
 					scope.counter = refresh;
 					scope.stop = false;
-					scope.tweets = [];
-
-					if (!scope.key)
-						return;				
+					scope.tweets = [];	
 
 					scope.init = function() {
 						// HANDLE SERVER SIDE
 						init = true;
 						scope.search();
-						
-						// LOCAL MODE BUT CORS
-
-						// service.asyncAuthCall(scope.key).then(function(d) {
-						// 	bearer = d.data.access_token;
-						// 	scope.$watch('hashtag', function(newValue, oldValue) {
-						// 		if ( newValue !== oldValue || !init) {																					
-						// 			if (!bearer)
-						// 				return;
-						// 			scope.search();
-						// 		}
-						// 	});
-
-						// 	init = true;
-						// 	scope.search();
-						// });
 					};
 
 					scope.onTimeout = function() {						
@@ -154,7 +135,7 @@
 							scope.counter = refresh;
 							if (d.data.errors)
 							{
-								console.log(d.data.errors[0]);
+								//console.log(d.data.errors[0]);
 								return;
 							}								
 							if (d && d.data && d.data.statuses) {
