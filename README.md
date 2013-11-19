@@ -66,7 +66,7 @@ $scope.hashtag = 'football';
 
 * `hashtag`: scope hashtag string variable object, default 'football'
 * `button`: show refresh button, default true
-* `hash`: show refresh button, default true
+* `hash`: show hash input field, default true
 * `refresh`: scope variable, refresh time
 
 Example with all above features:
