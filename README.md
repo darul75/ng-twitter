@@ -50,7 +50,7 @@ Then, inject `ngTwitter` in your application module:
 angular.module('myApp', ['ngTwitter']);
 ```
 
-and then just add an `div` with `tweets` directive name attribute, `authKey` and 'hashtag' scope variable attribute.
+and then just add an `div` with `tweets` directive name attribute, `hashtag` scope variable attribute.
 
 ```html
 <div tweets hashtag="hashtag" button="true" count="15" refresh="60"/>
