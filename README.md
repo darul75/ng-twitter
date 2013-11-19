@@ -1,4 +1,4 @@
-ng-twitter
+ng-twitter [![NPM version](https://badge.fury.io/js/ng-twitter.png)](http://badge.fury.io/js/ng-twitter) [![Build Status](https://travis-ci.org/darul75/ng-twitter.png?branch=master)](https://travis-ci.org/darul75/ng-twitter)
 =====================
 
 Angular directive tweets display.
