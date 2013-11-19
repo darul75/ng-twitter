@@ -38,7 +38,7 @@ div.panel button {
 }
 
 ul.tweetFavList{
-    padding-left: 5;
+    padding-left: 5px;
     margin:0 auto;    
     list-style:none;
 	font:14px/1.3 'Segoe UI',Arial, sans-serif;

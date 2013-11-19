@@ -49,36 +49,20 @@
 				}
 			};
 		})
-		// TWEETER SERVICE AUTH AND QUERY
+		// TWEETER PROXY SERVICE
 		.service('twitter', ['$http', function (http) {			
 			return {
-				asyncAuthCall: function(authKey) {
-					var cfg = {
-						headers: {
-							'Authorization': 'Basic '+authKey,
-							'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'
-						},
-						withCredentials: true
-					};
-					var promise = http.post('https://api.twitter.com/oauth2/token', 'grant_type=client_credentials', cfg).then(function (response) {					
-						return response;
-					});
-					return promise;
-				},
-				asyncSearchCall: function(bearer, hashtag, since) {
-					var cfg = {
-						headers: {
-							'Authorization': 'Bearer '+bearer,
-							'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'
-						}
-					};
-					var paramSince = since ? '&since_id='+ since : '';
-					var queryUrl = 'https://api.twitter.com/1.1/search/tweets.json?q=%23'+hashtag+paramSince;
+				asyncSearch: function(hashtag, since) {	
+					var cfg = {	};				
+					var paramSince = since ? '&since_id='+ since : '';					
+					// should add since but not there because of mock
+					//var queryUrl = '/search?hashtag='+hashtag+paramSince;
+					var queryUrl = '/search?hashtag='+hashtag;
 					var promise = http.get(queryUrl, cfg).then(function (response) {						
 						return response;
 					});
 					return promise;
-				}
+				}				
 			};
         }])
 		// DIRECTIVE
@@ -118,19 +102,25 @@
 						return;				
 
 					scope.init = function() {
-						service.asyncAuthCall(scope.key).then(function(d) {
-							bearer = d.data.access_token;
-							scope.$watch('hashtag', function(newValue, oldValue) {
-								if ( newValue !== oldValue || !init) {																					
-									if (!bearer)
-										return;
-									scope.search();
-								}
-							});
+						// HANDLE SERVER SIDE
+						init = true;
+						scope.search();
+						
+						// LOCAL MODE BUT CORS
 
-							init = true;
-							scope.search();
-						});
+						// service.asyncAuthCall(scope.key).then(function(d) {
+						// 	bearer = d.data.access_token;
+						// 	scope.$watch('hashtag', function(newValue, oldValue) {
+						// 		if ( newValue !== oldValue || !init) {																					
+						// 			if (!bearer)
+						// 				return;
+						// 			scope.search();
+						// 		}
+						// 	});
+
+						// 	init = true;
+						// 	scope.search();
+						// });
 					};
 
 					scope.onTimeout = function() {						
@@ -160,7 +150,7 @@
 					};
 
 					scope.search = function() {
-						service.asyncSearchCall(bearer, scope.hashtag, since_id).then(function(d) {
+						service.asyncSearch(scope.hashtag, since_id).then(function(d) {
 							scope.counter = refresh;
 							if (d.data.errors)
 							{
