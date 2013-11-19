@@ -22,8 +22,8 @@ module.exports = function(grunt) {
           autoWatch: true,
           singleRun: true,
           files: [            
-            'src/bower_components/angular/angular.js',
-            'src/bower_components/angular-mocks/angular-mocks.js',                                    
+            'bower_components/angular/angular.js',
+            'bower_components/angular-mocks/angular-mocks.js',                                    
             'src/ng-twitter.js',
             'test/**/*Spec.js']
         }

@@ -8,8 +8,8 @@ describe('test valid json', function () {
 		$ngCompile = $compile;
 		$ngRootScope = $rootScope;
 
-		var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
-		$ngRootScope.json = { json: obj };
+		// var obj = {a:1, 'b':'foo', c:[false,null, {d:{e:1.3e5}}]};
+		// $ngRootScope.json = { json: obj };
 		$ngRootScope.badjson = function() {};
 
 	}));
