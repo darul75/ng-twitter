@@ -3,7 +3,17 @@ ng-twitter
 
 Angular directive tweets display.
 
-In construction
+Idea is to provide a tweet listing for you website.
+
+I have made some tests just using angular with http service to query Twitter API (authentication, query) but have faced cors
+issue, just working on localhost.
+
+So one thing you need to do on you own is the server side.
+
+Demo
+-------------
+
+http://darul75.github.io/ng-twitter/
 
 Installation
 ------------
@@ -17,10 +27,11 @@ npm install ng-twitter
 How to use it
 -------------
 
-You should already have script required for Angular
+You should already have script required for Angular, note sanitize module use.
 
 ```html
 <script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript" src="angular-sanitize.min.js"></script>
 ```
 
 to the list above, you should add:
@@ -42,29 +53,27 @@ angular.module('myApp', ['ngTwitter']);
 and then just add an `div` with `tweets` directive name attribute, `authKey` and 'hashtag' scope variable attribute.
 
 ```html
-<div tweets key="authKey" hashtag="hashtag" button="true" count="15" refresh="60"/>
+<div tweets hashtag="hashtag" button="true" count="15" refresh="60"/>
 ```
 
-`authKey`, 'hashtag' are your scope authentication key variable.
+'hashtag' is your default hashtag search value.
 
 ```javascript
-$scope.authKey = 'bzJZSlN4ZnJUYWhyeXdub2R4MzJBOkFHSmw5MnJIeEFTRkpYVW9BSm8zMEpTQzU2Wm0zNFZxZmFVZFh1TUZWamc=';
 $scope.hashtag = 'football';
 ```
 
 ### Attribute
 
-* `key`: scope json variable object
-* `key`: scope json variable object
-* `key`: scope json variable object
-* `key`: scope json variable object
-* `key`: scope json variable object
+* `hashtag`: scope hashtag string variable object, default 'football'
+* `button`: show refresh button, default true
+* `hash`: show refresh button, default true
+* `refresh`: scope variable, refresh time
 
 Example with all above features:
 
 ```html
 <div ng-app="myApp" ng-controller="ctrl">
-	<div tweets key="authKey" hashtag="hashtag" button="true" count="5" refresh="10"/>		
+	<div tweets hashtag="hashtag" hash="true" button="true" count="5" refresh="10"/>		
 </div>
 ```
 
