@@ -55,8 +55,10 @@
 				asyncSearch: function(hashtag, since) {	
 					var cfg = {	};				
 					var paramSince = since ? '&since_id='+ since : '';					
-					// should add since but not there because of mock
+					// should add 'since' but not there because of mock					
 					//var queryUrl = '/search?hashtag='+hashtag+paramSince;
+
+					// YOUR SERVICE CALL : manage auth and search on server side
 					var queryUrl = '/search?hashtag='+hashtag;
 					var promise = http.get(queryUrl, cfg).then(function (response) {						
 						return response;
