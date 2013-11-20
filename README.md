@@ -74,7 +74,7 @@ Example with all above features:
 
 ```html
 <div ng-app="myApp" ng-controller="ctrl">
-	<div tweets hashtag="hashtag" hash="true" button="true" count="5" refresh="10"/>		
+	<div tweets hashtag="hashtag" hash="true" button="true" count="5" refresh="10"/>
 </div>
 ```
 
