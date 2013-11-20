@@ -67,6 +67,7 @@ $scope.hashtag = 'football';
 * `hashtag`: scope hashtag string variable object, default 'football'
 * `button`: show refresh button, default true
 * `hash`: show hash input field, default true
+* `count`: number of tweets to show, default 15
 * `refresh`: scope variable, refresh time
 
 Example with all above features:
