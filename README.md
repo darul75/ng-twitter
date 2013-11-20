@@ -78,6 +78,30 @@ Example with all above features:
 </div>
 ```
 
+### Customization
+
+If you look at the code, module provide one angular service, here is the service side call with `$http`. So, for your needs, just play with it.
+```javascript
+// TWEETER PROXY SERVICE
+.service('twitter', ['$http', function (http) {                        
+	return {
+	        asyncSearch: function(hashtag, since) {
+	                var cfg = {        };
+	                var paramSince = since ? '&since_id='+ since : '';
+	                // should add 'since' but not there because of mock
+	                //var queryUrl = '/search?hashtag='+hashtag+paramSince;
+	                
+	                // YOUR SERVICE CALL : manage auth and search on server side
+	                var queryUrl = '/search?hashtag='+hashtag;
+	                var promise = http.get(queryUrl, cfg).then(function (response) {
+	                        return response;
+	                });
+	                return promise;
+	        }
+	};
+}])
+```
+
 ### Build
 
 You can run the tests by running
