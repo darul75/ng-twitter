@@ -5,8 +5,8 @@ Angular directive tweets display.
 
 Idea is to provide a tweet listing for you website.
 
-I have made some tests just using angular with http service to query Twitter API (authentication, query) but have faced cors
-issue, just working on localhost.
+I have made some tests using angular `http` service to query Twitter API (authentication, query) and it works. But at the end
+, I have faced CORS issues, and it was just working on localhost.
 
 So one thing you need to do on you own is the server side.
 
