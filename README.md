@@ -8,7 +8,7 @@ Idea is to provide a tweet listing for you website.
 I have made some tests using angular `http` service to query Twitter API (authentication, query) and it works. But at the end
 , I have faced CORS issues, and it was just working on localhost.
 
-So one thing you need to do on you own is the server side.
+So one thing you need to do on your own is the server side.
 
 Demo
 -------------
@@ -27,7 +27,7 @@ npm install ng-twitter
 How to use it
 -------------
 
-You should already have script required for Angular, note sanitize module use.
+You should already have script required for Angular, note `sanitize` module use.
 
 ```html
 <script type="text/javascript" src="angular.min.js"></script>
@@ -68,7 +68,7 @@ $scope.hashtag = 'football';
 * `button`: show refresh button, default true
 * `hash`: show hash input field, default true
 * `count`: number of tweets to show, default 15
-* `refresh`: scope variable, refresh time
+* `refresh`: refresh time in seconds
 
 Example with all above features:
 
