@@ -1,7 +1,7 @@
 {
   "name": "ng-twitter",
   "description": "AngularJS directive twitter tweets addict display.",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "grunt": "latest",
-    "grunt-karma": "latest",
+    "grunt-karma": "0.7.1",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-cssmin": "~0.6.0",
