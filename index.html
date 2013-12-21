@@ -56,7 +56,7 @@
 
 <h2>Demo real time</h2>
 
-<a href="http://darul-demo.herokuapp.com/" target='_blank'> HERE IT IS !!! </a>
+<p><strong><a href="http://darul-demo.herokuapp.com/" target='_blank'> HERE IT IS !!! </a></strong></p>
 
 <h2>Demo mock service : no refresh button</h2>
 
@@ -168,7 +168,7 @@
                   "text": "hash",
                   "indices": [
                     15,
-                    25
+                    23
                   ]
                 }
               ],
@@ -185,7 +185,7 @@
       var t = {};
       angular.copy(tweet, t);     
       t["retweet_count"] = i;
-      t["text"] = 'this is a demo #hashtag'+i;
+      t["text"] = 'this is a demo #hashtag'+ ' some words' + i;
       tweets.push(t);
     }
 
@@ -244,7 +244,7 @@ $ git checkout gh-pages
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p class="copyright">Ng-twitter maintained by <a href="https://github.com/darul75">darul75</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a> — Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
       </footer>
     </div>
 
