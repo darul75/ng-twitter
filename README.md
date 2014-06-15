@@ -15,6 +15,8 @@ Demo
 
 http://darul75.github.io/ng-twitter/
 
+http://worldcup.elasticbeanstalk.com/
+
 Installation
 ------------
 
